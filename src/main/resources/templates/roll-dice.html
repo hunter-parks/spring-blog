@@ -8,6 +8,31 @@
 
 <h2>Roll Dice</h2>
 
+<h2>Pick a number between 1 and 6!</h2>
+
+<!--<h2>Your guess was: </h2>-->
+<!--<h4><span th:text="${usersGuess}"></span></h4>-->
+
+<!--<h2>Random number is: </h2>-->
+<!--<h4><span th:text="${guess}"></span></h4>-->
+
+<!--<ul>-->
+<!--    <a th:href="/roll-dice/1">1</a>-->
+<!--    <a th:href="/roll-dice/2">2</a>-->
+<!--    <a th:href="/roll-dice/3">3</a>-->
+<!--    <a th:href="/roll-dice/4">4</a>-->
+<!--    <a th:href="/roll-dice/5">5</a>-->
+<!--    <a th:href="/roll-dice/6">6</a>-->
+<!--</ul>-->
+
+<!--<th:block th:if="${alreadyGuessed}">-->
+<!--        <div th:if="${usersGuess == guess}">Congrats dude! You guessed right!</div>-->
+<!--        <div th:unless="${usersGuess != guess}">Sorry peep, you guessed wrong! Try again.</div>-->
+<!--</th:block>-->
+
+
+<h2>Roll Dice</h2>
+
 <form action="/roll-dice" method="get">
     <input type="text" name="dice" id="dice">
     <button>Roll</button>
@@ -22,5 +47,6 @@
     <a th:href="/roll-dice/5">5</a>
     <a th:href="/roll-dice/6">6</a>
 </ul>
+
 </body>
 </html>
