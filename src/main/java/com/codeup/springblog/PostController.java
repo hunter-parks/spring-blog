@@ -9,6 +9,7 @@ import java.util.List;
 
 @Controller
 public class PostController {
+
   // dependency injection
   private final PostRepository postDao;
   private final UserRepository userDao;
@@ -34,9 +35,9 @@ public class PostController {
       return "posts/show";
   }
 
-  // Viewing the create form
+  // Form binding
     @GetMapping("/posts/create")
-    public String create(Model model) {
+    public String showCreateForm(Model model) {
       model.addAttribute("post", new Post());
        return "posts/create";
     }

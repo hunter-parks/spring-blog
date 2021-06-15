@@ -5,18 +5,53 @@
     <title>Partials</title>
 </head>
 <body>
+<footer th:fragment="bootStrap_footer" class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
 
-<footer th:fragment="footer">2021</footer>
-
-<footer class="footer-page font-small special-color-dark pt-4">
-    <div class="container">
-        <div class="row">
-            <form class="form-inline">
-                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search here">
-            </form>
+            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+        </div>
+        <div class="col-6 col-md">
+            <h5> THE Features</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Logout button</a></li>
+                <li><a class="text-muted" href="#">Team only </a></li>
+                <li><a class="text-muted" href="#">Developers only</a></li>
+                <li><a class="text-muted" href="#">Gifts</a></li>
+                <li><a class="text-muted" href="#">Random</a></li>
+                <li><a class="text-muted" href="#">Mystery</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Twitter</a></li>
+                <li><a class="text-muted" href="#">Instagram</a></li>
+                <li><a class="text-muted" href="#">Email </a></li>
+                <li><a class="text-muted" href="#">Something else</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Team</a></li>
+                <li><a class="text-muted" href="#">Locations</a></li>
+                <li><a class="text-muted" href="#">Privacy</a></li>
+                <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
         </div>
     </div>
 </footer>
+
+<th:block th:fragment="bootStrap_styling_sheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</th:block>
+
+<th:block th:fragment="bootStrap_scripts">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</th:block>
 
 </body>
 </html>
