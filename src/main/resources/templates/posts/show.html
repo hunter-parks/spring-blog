@@ -1,13 +1,28 @@
+
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"  >
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
-    <title>Posts</title>
+    <title>Posts Display</title>
+
+    <th:block th:replace="partials/navbar :: bootStrap_styling_sheet" ></th:block>
+    <th:block th:replace="partials/footer :: bootStrap_styling_sheet" ></th:block>
 </head>
 <body>
+<nav th:replace="partials/navbar :: bootStrap_nav" ></nav>
 
 
-<h2 th:text="${singlePost.title}"></h2>
-<p th:text="${singlePost.body}"></p>
+<h2 th:text="${id.title}"></h2>
+
+<p th:text="${id.body}"></p>
+
+<p>User email: <span th:text="${id.user.email}"></span></p>
+
+<div th:each="image : ${id.images}">
+    <img th:src="${images.path}" th:alt="${images.description}">
+</div>
+
+
+<footer th:replace="partials/footer :: bootStrap_footer" ></footer>
 </body>
 </html>

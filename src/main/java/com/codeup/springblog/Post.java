@@ -1,9 +1,10 @@
 package com.codeup.springblog;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "blog")
+@Table(name = "posts")
 public class Post {
 
     @Id
@@ -17,20 +18,42 @@ public class Post {
     @Column(nullable = false)
     private String body;
 
+    @OneToOne
+    private User user;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
+    private List<PostImage> images;
+
+
     // Default Constructor //
     public Post(){}
 
-    public Post(String title,String body) {
+    public Post(String title,String body, User user, List<PostImage> images) {
         this.title = title;
         this.body = body;
+        this.user = user;
+        this.images = images;
+    }
+
+    public Post(long id, String title, String body, User user, List<PostImage> images) {
+        this.id = id;
+        this.title = title;
+        this.body = body;
+        this.user = user;
+        this.images = images;
     }
 
     // Getters //
     public String getTitle() { return title;}
     public String getBody() { return body;}
+    public long getId() {return id;}
+    public User getUser() {return user;}
+    public List<PostImage> getImages() {return images;}
 
     // Setters //
     public void setTitle(String title) { this.title = title; }
     public void setBody(String body) { this.body = body;}
-
+    public void setId(long id) { this.id = id; }
+    public void setUser(User user) { this.user = user; }
+    public void setImages(List<PostImage> images) {this.images = images;}
 }
