@@ -1,8 +1,14 @@
-package com.codeup.springblog;
+package com.codeup.springblog.controllers;
 
+import com.codeup.springblog.models.Post;
+import com.codeup.springblog.models.PostImage;
+import com.codeup.springblog.models.User;
+import com.codeup.springblog.repositories.PostRepository;
+import com.codeup.springblog.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import services.EmailService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,14 +16,17 @@ import java.util.List;
 @Controller
 public class PostController {
 
+
   // dependency injection
+  private final EmailService emailService;
   private final PostRepository postDao;
   private final UserRepository userDao;
 
   // public constructor for above
-  public PostController(PostRepository postDao, UserRepository userDao) {
+  public PostController(PostRepository postDao, UserRepository userDao, EmailService emailService) {
     this.postDao = postDao;
     this.userDao = userDao;
+    this.emailService = emailService;
   }
 
   @GetMapping("/posts")
@@ -43,14 +52,14 @@ public class PostController {
     }
 
     @PostMapping("/posts/create")
-    public String postsCreate(@RequestParam(name = "title") String title, @RequestParam(name = "body") String body) {
+    public String postsCreate(@ModelAttribute Post post) {
 
     User user = userDao.getById(1L);
-    Post newPost = new Post(title,body,user,null);
+    post.setUser(user);
 
-    Post savePost = postDao.save(newPost);
+    postDao.save(post);
 
-    return "redirect:/posts/" + savePost.getId();
+    return "redirect:/posts/" + post.getId();
     }
 
     @PostMapping("/posts/delete/{n}")
