@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index Page</title>
-    <th:block th:replace="partials/navbar :: bootStrap_styling_sheet" ></th:block>
-    <th:block th:replace="partials/navbar :: bootStrap_scripts" ></th:block>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css}">
+    <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js}"></script>
+    <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js}"></script>
 </head>
 <body>
+<header th:fragment="header">
+    <h1>This is your header!</h1>
 
+
+</header>
 </body>
 </html>
