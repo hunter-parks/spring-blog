@@ -8,7 +8,7 @@ import com.codeup.springblog.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import services.EmailService;
+import com.codeup.springblog.services.EmailService;
 
 import java.util.ArrayList;
 import java.util.List;
