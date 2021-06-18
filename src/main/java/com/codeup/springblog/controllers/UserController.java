@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class UserController {
 
-    private UserRepository users;
-    private PasswordEncoder passwordEncoder;
+    private final UserRepository users;
+    private final PasswordEncoder passwordEncoder;
 
     public UserController(UserRepository users, PasswordEncoder passwordEncoder) {
         this.users = users;

@@ -6,7 +6,8 @@
 </head>
 <body>
 <h1>Create an Account</h1>
-
+<hr>
+<br>
 <form th:action="@{/sign-up}" method="POST" th:object="${user}">
     <label for="username">Username</label>
     <input id="username" th:field="*{username}"/>
@@ -16,7 +17,7 @@
 
     <label for="password">Password</label>
     <input id="password" th:field="*{password}"/>
-
+<br><br>
     <input value="Sign Me Up" type="submit">
 </form>
 
